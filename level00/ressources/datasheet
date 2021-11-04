@@ -1,0 +1,6 @@
+Le home de level00 est vide, on peut faire un find sur flag00 en filtrant toutes les erreurs.
+find / -user flag00 2> /dev/null
+La commande nous retourne 2 fichiers, l'un des fichiers contient : "cdiiddwpgswtgt".
+À l'oeil on reconnait du code césar, un tour sur n'importe quel site de decodage nous donne : "nottohardhere".
+On se connecte a l'utilisateur flag00 avec le password nottohardhere.
+Un getflag nous donne alors: x24ti5gi3x0ol2eh4esiuxiasfi

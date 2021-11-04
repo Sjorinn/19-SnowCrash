@@ -1,0 +1,26 @@
+si on execute le fichier dans le home, il demande a etre lancé par un uid
+particulier
+
+si on regarde avec strings, on peut apercevoir le token hashé,
+
+regardons le code en assembleur grace a gdb
+
+gdb level13
+
+disas main
+
+le call a getuid et fait a la ligne +9, on met un breakpoint:
+
+on step pour laisser passer le call initial et on regarde le registre eax ou 
+est stocké la valeur de retour de getuid 
+(gdb) print $eax
+$1 = 2013
+
+il nous suffit alors de changer 2013 en 4242
+(gdb) set $eax=4242
+(gdb) step
+Single stepping until exit from function main,
+which has no line number information.
+your token is 2A31L79asukciNyi8uppkEuSx
+0xb7e454d3 in __libc_start_main () from /lib/i386-linux-gnu/libc.so.6
+(gdb) 

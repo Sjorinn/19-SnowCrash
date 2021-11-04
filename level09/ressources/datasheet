@@ -1,0 +1,20 @@
+le programme nous demande un argument
+
+si on essaie avec abcd il renvoie aceg et aaaa renvoie abcd
+
+il semblerait que le programme decale chaque carractere en fonction de sa position dans 
+la chaine de caractere,
+
+avec un script c on devrait pourvoir reproduire et decoder le contenu de token
+
+on a pas les droits de creer un fichier dans le home, on utilise alors scp pour recuperer le token et
+creer le script en local,
+
+scp -P 4242 level09@192.168.1.24:/home/user/level09/token 
+
+on lance le script sur le cat de token 
+
+./a.out `cat token`
+
+et on obtient f3iji1ju5yuevaus41q1afiuq, qui n'est pas le flag  mais le mot de passe de flag09
+getflag nous donne le flag

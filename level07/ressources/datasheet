@@ -1,0 +1,11 @@
+il y a un executable dans le home qui affiche level07
+quand on strings l'executable on voit un get env et LOGNAME
+
+quand on regardes les variables d'environnement on voit que LOGNAME = level07
+
+donc on peut en deduire que l'executable print seulement la variable LOGNAME
+on a donc juste a changer LOGNAME pour print le getflag
+
+LOGNAME=';getflag'
+
+et on a le flag

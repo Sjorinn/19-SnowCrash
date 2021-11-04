@@ -1,0 +1,9 @@
+l'executable dans le home nous demande un file mais on a pas le droit de lire la file token
+
+si on crée un fichier test  et on a le droit de lire le fichier
+
+ln -s /home/user/level08/token /tmp/test && ./level08  /tmp/test
+
+si on essaye avec un lien symbolique, le swap marche et on peut acceder a token
+
+le mdp de flag08 est quif5eloekouj29ke0vouxean

@@ -1,0 +1,9 @@
+1 fois sur 4 a la connection, on a You have new mail qui s'affiche
+
+le mail level05 est une regle crontab qui execute  le scripts present dans /usr/sbin/openarenaserver
+qui lui execute tout les scripts presents dans /opt/openarenaserver
+
+on a donc juste a creer un script qui execute getflag et stock le resultat quelque part dans openarenaserver
+
+echo 'getflag > /tmp/pass' > /opt/openarenaserver/test
+on attends ensuite que la regle se lance

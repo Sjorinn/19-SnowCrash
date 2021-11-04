@@ -1,0 +1,21 @@
+dans le home de l'user level02, il y a un fichier level02.pcap.
+
+les fichiers pcap sont des fichiers de capture de traffic reseau
+
+on peut le recuperer sur notre machine avec le protocole scp
+
+scp -P 4242 level02@192.168.1.24:/home/user/level02/level02.pcap .
+
+sur le paquet 43 on voit se dessiner le mot password,
+on suit alors le flux tcp pour avoir l'ensemble des données du flux.
+
+on voit alors password : Password: ft_wandr...NDRel.L0L
+
+si on essaie de se connecter avec ce mot de passe la il y a une erreur
+
+si on regarde le flux en hexdump pour avoir les caracteres tapés,
+on voit que les points on la valeur hexa 7F, qui correspond a DEL dans la table ASCII
+on supprime alors les caracteres qui sont suivi de del et on obtient:
+
+
+ft_waNDReL0L

